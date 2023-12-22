@@ -3,5 +3,9 @@
 Basics
 ===================================================================
 
-This tutorial focuses on the basic usage of SAPIEN Python APIs.
+This tutorial focuses on the basic usage of SAPIEN-IPC APIs.
 
+.. toctree::
+
+   installation
+   

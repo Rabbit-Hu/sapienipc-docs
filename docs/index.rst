@@ -1,5 +1,5 @@
 Welcome to SAPIEN-IPC documentation!
-==================================
+====================================
 
 .. toctree::
    :maxdepth: 3
@@ -9,9 +9,9 @@ Welcome to SAPIEN-IPC documentation!
 
 This is the documentation for the package SAPIEN-IPC.
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
