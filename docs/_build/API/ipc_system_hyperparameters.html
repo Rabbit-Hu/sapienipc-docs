@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPCSystem Hyperparameters &mdash; sapienipc 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Installation" href="../tutorial/basics/installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1565c0" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sapienipc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/basics/index.html">Basics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IPCSystem Hyperparameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_components"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_components</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_scenes"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_scenes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_planes"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_planes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_planes_per_scene"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_planes_per_scene</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_particles"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_particles</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_surface_primitives_per_scene"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_surface_primitives_per_scene</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.max_blocks"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.max_blocks</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.device"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.device</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.debug"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.debug</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.use_graph"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.use_graph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.time_step"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.time_step</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.gravity"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.gravity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.d_hat"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.d_hat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.eps_d"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.eps_d</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.eps_v"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.eps_v</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.v_max"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.v_max</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.kappa"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.kappa</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.kappa_affine"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.kappa_affine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.kappa_con"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.kappa_con</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_slackness"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.ccd_slackness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_thickness"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.ccd_thickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_tet_inversion_thres"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.ccd_tet_inversion_thres</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.ee_classify_thres"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.ee_classify_thres</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.ee_mollifier_thres"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.ee_mollifier_thres</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.allow_self_collision"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.allow_self_collision</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.newton_max_iters"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.newton_max_iters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.cg_max_iters"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.cg_max_iters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.line_search_max_iters"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.line_search_max_iters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_max_iters"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.ccd_max_iters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.precondition"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.precondition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.cg_error_tolerance"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.cg_error_tolerance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sapienipc.ipc_system.IPCSystemConfig.cg_error_frequency"><code class="docutils literal notranslate"><span class="pre">IPCSystemConfig.cg_error_frequency</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1565c0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sapienipc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">IPCSystem Hyperparameters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/API/ipc_system_hyperparameters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sapienipc.ipc_system">
+<span id="ipcsystem-hyperparameters"></span><span id="ipc-system-hyperparameters"></span><h1>IPCSystem Hyperparameters<a class="headerlink" href="#module-sapienipc.ipc_system" title="Link to this heading"></a></h1>
+<p>References:</p>
+<ul class="simple">
+<li><p>“IPC paper”: Li, Minchen, Zachary Ferguson, Teseo Schneider, Timothy R. Langlois, Denis Zorin, Daniele Panozzo, Chenfanfu Jiang, and Danny M. Kaufman. “Incremental potential contact: intersection-and inversion-free, large-deformation dynamics.” ACM Trans. Graph. 39, no. 4 (2020): 49.</p></li>
+<li><p>“C-IPC paper”: Li, Minchen, Danny M. Kaufman, and Chenfanfu Jiang. “Codimensional Incremental Potential Contact.” ACM Transactions on Graphics 40, no. 4 (August 31, 2021): 1–24. <a class="reference external" href="https://doi.org/10.1145/3450626.3459767">https://doi.org/10.1145/3450626.3459767</a>.</p></li>
+<li><p>“ABD paper”: Lan, Lei, Danny M. Kaufman, Minchen Li, Chenfanfu Jiang, and Yin Yang. “Affine Body Dynamics: Fast, Stable &amp; Intersection-Free Simulation of Stiff Materials.” arXiv, January 31, 2022. <a class="reference external" href="https://doi.org/10.48550/arXiv.2201.10022">https://doi.org/10.48550/arXiv.2201.10022</a>.</p></li>
+<li><p>“CG slides”: Xu, Zhiliang. “ACMS 40212/60212: Advanced Scientific Computing, Lecture 8: Fast Linear Solvers (Part 5).” (<a class="reference external" href="https://www3.nd.edu/~zxu2/acms60212-40212/Lec-09-5.pdf">https://www3.nd.edu/~zxu2/acms60212-40212/Lec-09-5.pdf</a>)</p></li>
+<li><p>“FEM tutorial”: Sifakis, Eftychios. “FEM simulation of 3D deformable solids: a practitioner’s guide to theory, discretization and model reduction. Part One: The classical FEM method and discretization methodology.” In Acm siggraph 2012 courses, pp. 1-50. 2012.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sapienipc.ipc_system.</span></span><span class="sig-name descname"><span class="pre">IPCSystemConfig</span></span><a class="reference internal" href="../_modules/sapienipc/ipc_system.html#IPCSystemConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig" title="Link to this definition"></a></dt>
+<dd><p>Configuration class for IPCSystem.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_components">
+<span class="sig-name descname"><span class="pre">max_components</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_components" title="Link to this definition"></a></dt>
+<dd><p>Max number of components in the system.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_scenes">
+<span class="sig-name descname"><span class="pre">max_scenes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_scenes" title="Link to this definition"></a></dt>
+<dd><p>Max number of scenes in the system.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_planes">
+<span class="sig-name descname"><span class="pre">max_planes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_planes" title="Link to this definition"></a></dt>
+<dd><p>Max number of planes in the system.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_planes_per_scene">
+<span class="sig-name descname"><span class="pre">max_planes_per_scene</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_planes_per_scene" title="Link to this definition"></a></dt>
+<dd><p>Max number of planes in each scene handled by the system.
+This is used in the broad phase (filtering contact pairs).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_particles">
+<span class="sig-name descname"><span class="pre">max_particles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_particles" title="Link to this definition"></a></dt>
+<dd><p>Max number of particles in the system.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_surface_primitives_per_scene">
+<span class="sig-name descname"><span class="pre">max_surface_primitives_per_scene</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_surface_primitives_per_scene" title="Link to this definition"></a></dt>
+<dd><p>Max number of particles in each scene handled by the system.
+This is used in the broad phase (filtering contact pairs).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.max_blocks">
+<span class="sig-name descname"><span class="pre">max_blocks</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.max_blocks" title="Link to this definition"></a></dt>
+<dd><p>Max number of blocks in each scene.
+Number of blocks = sum(number of FEM tetrahedra) + number of ABD bodies
++ number of contact pairs after the broad phase.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.device" title="Link to this definition"></a></dt>
+<dd><p>Device of the system, like “cpu”, “cuda:0”, etc.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.debug" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+<p>Set to True to enable the debug mode. In the debug mode, there
+will be more debug outputs and assertions, lowering the efficiency
+of the system.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.use_graph">
+<span class="sig-name descname"><span class="pre">use_graph</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.use_graph" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+<p>Set to True to enable CUDA graph for faster line search and CG solver.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.time_step">
+<span class="sig-name descname"><span class="pre">time_step</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.time_step" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0.025 s</p>
+</dd>
+</dl>
+<p>Time step size of the simulation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.gravity">
+<span class="sig-name descname"><span class="pre">gravity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">vec3f</span></em><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.gravity" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(0, 0, -9.8) kg m / s^2</p>
+</dd>
+</dl>
+<p>Gravity in the simulation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.d_hat">
+<span class="sig-name descname"><span class="pre">d_hat</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.d_hat" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-2 m</p>
+</dd>
+</dl>
+<p>Distance threshold for barrier function (Eq 6, IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.eps_d">
+<span class="sig-name descname"><span class="pre">eps_d</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.eps_d" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-2 m</p>
+</dd>
+</dl>
+<p>Stopping threshold for Newton’s method (Algo 1, IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.eps_v">
+<span class="sig-name descname"><span class="pre">eps_v</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.eps_v" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-2 m / s</p>
+</dd>
+</dl>
+<p>Relative velocity threshold for smoothed friction (Eq 13, IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.v_max">
+<span class="sig-name descname"><span class="pre">v_max</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.v_max" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e9 m / s</p>
+</dd>
+</dl>
+<p>Max velocity for broad phase of collision detection. At the beginning
+of each time step, contact pairs that are at least (v_max * time_step + d_hat)
+apart from each other may be ignored.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When v_max is too small, model penetration may happen,
+leading to wrong results.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.kappa">
+<span class="sig-name descname"><span class="pre">kappa</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.kappa" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e3</p>
+</dd>
+</dl>
+<p>Coefficient for barrier functions (Eq 5, IPC paper).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When kappa is too small, the simulator may get stuck when there is contact.
+When kappa is too large, there will be larger damping, and
+the simulator may take more substeps (Newton &amp; CG steps) to converge or
+even never converge and get stuck.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.kappa_affine">
+<span class="sig-name descname"><span class="pre">kappa_affine</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.kappa_affine" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e3</p>
+</dd>
+</dl>
+<p>Coefficient for the orthogonality potential for ABD (Eq 6, ABD paper).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When it kappa_affine too small, the ABD objects may deform undesirably.
+When kappa_affine is too large, there will be larger damping, and
+the simulator may take more substeps (Newton &amp; CG steps) to converge or
+even never converge and get stuck.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.kappa_con">
+<span class="sig-name descname"><span class="pre">kappa_con</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.kappa_con" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e2</p>
+</dd>
+</dl>
+<p>Coefficient for the L2 penalty terms for kinematic targets (kappa_con * ||x_target - x||^2).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When kappa_con is too small, the particles may not reach their
+kinematic targets (if any).
+When kappa_con is too large, there will be larger damping, and
+the simulator may take more substeps (Newton &amp; CG steps) to converge or
+even never converge and get stuck.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.ccd_slackness">
+<span class="sig-name descname"><span class="pre">ccd_slackness</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_slackness" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0.7</p>
+</dd>
+<dt class="field-even">Range<span class="colon">:</span></dt>
+<dd class="field-even"><p>(0.0, 1.0)</p>
+</dd>
+</dl>
+<p>Slackness parameters in CCD (Continuous Collision Detection) (Alg 1, C-IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.ccd_thickness">
+<span class="sig-name descname"><span class="pre">ccd_thickness</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_thickness" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0.0 m</p>
+</dd>
+</dl>
+<p>Thickness value. Set to a very small positive number (much smaller than d_hat)
+to avoid model penetration due to numerical error in CCD.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.ccd_tet_inversion_thres">
+<span class="sig-name descname"><span class="pre">ccd_tet_inversion_thres</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_tet_inversion_thres" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0.0</p>
+</dd>
+</dl>
+<p>Tet inversion threshold. Set to a very small positive number
+to avoid tetrahedron inversion due to numerical error in CCD.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.ee_classify_thres">
+<span class="sig-name descname"><span class="pre">ee_classify_thres</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.ee_classify_thres" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-6</p>
+</dd>
+</dl>
+<p>When the angle between two edges is smaller than arcsin(ee_classify_thres),
+the system does not compute the distance between their corresponding lines as their
+edge-edge distance, as this may underestimate their distance due to numerical error.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.ee_mollifier_thres">
+<span class="sig-name descname"><span class="pre">ee_mollifier_thres</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.ee_mollifier_thres" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-3</p>
+</dd>
+</dl>
+<p>Activate mollifier for edge-edge barrier function when
+(|cross(e_1, e_2)|^2 &lt; |e_1_rest|^2 * |e_1_rest|^2 * thres).
+(Eq 24, IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.allow_self_collision">
+<span class="sig-name descname"><span class="pre">allow_self_collision</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.allow_self_collision" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+<p>Set to False to ignore self collision (collision between parts of
+the same component). If you know there will not be any self collision
+in the environment, you can safely set this to False to save memory
+improve efficiency.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.newton_max_iters">
+<span class="sig-name descname"><span class="pre">newton_max_iters</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.newton_max_iters" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>10</p>
+</dd>
+</dl>
+<p>Max number of iterations in Newton’s method. This can significantly influence
+the quality of simulation results.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.cg_max_iters">
+<span class="sig-name descname"><span class="pre">cg_max_iters</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.cg_max_iters" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>40</p>
+</dd>
+</dl>
+<p>Max number of iterations in CG (Conjugate Gradients) in each Newton iteration.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.line_search_max_iters">
+<span class="sig-name descname"><span class="pre">line_search_max_iters</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.line_search_max_iters" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>10</p>
+</dd>
+</dl>
+<p>Max number of iterations in line search (Alg 1 Line 11-15, IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.ccd_max_iters">
+<span class="sig-name descname"><span class="pre">ccd_max_iters</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.ccd_max_iters" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>100</p>
+</dd>
+</dl>
+<p>Max number of iterations in Additive CCD (Alg 1, C-IPC paper).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.precondition">
+<span class="sig-name descname"><span class="pre">precondition</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.precondition" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“jacobi”</p>
+</dd>
+<dt class="field-even">Choices<span class="colon">:</span></dt>
+<dd class="field-even"><p>[“jacobi”, “none”]</p>
+</dd>
+</dl>
+<p>Preconditioner in CG solver.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.cg_error_tolerance">
+<span class="sig-name descname"><span class="pre">cg_error_tolerance</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.cg_error_tolerance" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-3</p>
+</dd>
+</dl>
+<p>CG convergence threshold: quit CG if dot(z, r) &lt; cg_error_tolerance ** 2 * dot (z0, r0) (Page 16, CG slides).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sapienipc.ipc_system.IPCSystemConfig.cg_error_frequency">
+<span class="sig-name descname"><span class="pre">cg_error_frequency</span></span><a class="headerlink" href="#sapienipc.ipc_system.IPCSystemConfig.cg_error_frequency" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>10</p>
+</dd>
+</dl>
+<p>Check if CG converges every cg_error_frequency steps.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tutorial/basics/installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Rabbit-Hu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
