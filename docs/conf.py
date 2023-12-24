@@ -1,8 +1,14 @@
+import os
+import sys
+import sapienipc
+
 project = 'sapienipc'
 author = 'Rabbit-Hu'
 release = "0.0.0"
+copyright = "2023, Rabbit-Hu"
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autodoc.typehints',
     'sphinx_rtd_theme',
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
@@ -10,6 +16,8 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.todo'
 ]
+# autodoc_typehints = "description"
+autodoc_member_order = 'bysource'
 todo_include_todos = True
 source_suffix = ['.rst', '.md']
 source_parsers = {
